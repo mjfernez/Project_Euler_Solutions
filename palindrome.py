@@ -1,12 +1,9 @@
-import PIL
-import math
-
 # Problem 4 - Palindrome Products
 
 
 def isPalindrome(number):
     numchar = str(number)
-    middle = len(numchar)/2
+    middle = int(len(numchar)/2)
     face = numchar[:middle]
     ref = numchar[len(numchar):middle-1:-1]
     if(face == ref):
@@ -37,7 +34,3 @@ print(answer)
 print("The factors are: " + str(findProduct(answer)))
 #x = input("Type a palindromic number: ")
 
-# if(isPalindrome(x)):
-# print "The factors are: " + str(findProduct(x))
-# else:
-# print "not a palindrome"
