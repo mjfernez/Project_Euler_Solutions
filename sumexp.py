@@ -5,6 +5,6 @@ strn = str(n)
 s = 0
 
 for i in strn:
-	s+=int(i)
+	s += int(i)
 	
-print s
+print(s)

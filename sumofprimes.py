@@ -1,5 +1,4 @@
 import PIL, math
-import numpy as np
 
 #Problem 10 sum of primes
 ###INEFFICIENT###
@@ -25,7 +24,7 @@ def prime_factors(number):
 	primes = []
 	if (number <=1):
 		return [1]
-	a = np.ones(number)
+	a = [1] * number
 	a[0]=0
 	a[1]=0#not prime
 	for i in range(2,int(math.ceil(math.sqrt(number)))):
@@ -42,4 +41,4 @@ def prime_factors(number):
 	return primes
 
 out = prime_factors(2000000)
-print str(sum(out))
+print(str(sum(out)))

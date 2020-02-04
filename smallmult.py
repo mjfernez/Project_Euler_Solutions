@@ -5,7 +5,6 @@
 #by all of the numbers from 1 to 20?
 
 import PIL, math
-import numpy as np
 
 def isDivisible(num, divisors):
 	divisible = True
@@ -23,5 +22,5 @@ while (not found):
 	start+=20
 	found = isDivisible(start,divs)
 	
-print start
-print str(isDivisible(start, divs))
+print(start)
+print(str(isDivisible(start, divs)))

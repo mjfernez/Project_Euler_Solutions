@@ -1,5 +1,4 @@
 import PIL, math
-import numpy as np
 
 #Problem 14 Longest Collatz sequence
 #Note, a little slow, takes about 15 seconds. 
@@ -21,5 +20,5 @@ for n in range(1,pow(10,6)):
 	if(len(chain)>len(biggo)):
 		biggo = chain
 	chain = []
-print biggo
-print "Has " + str(len(biggo)) +" numbers."
+print(biggo)
+print("Has " + str(len(biggo)) +" numbers.")

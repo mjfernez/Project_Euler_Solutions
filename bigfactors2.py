@@ -1,5 +1,4 @@
 import PIL, math
-import numpy as np
 
 #Problem 12 Highly divisible triangular number
 #finds the first number with over 500 factors
@@ -27,5 +26,7 @@ j = 0
 while(k < 500):
 	j += i
 	k=countfactors(j)
-	print str(j) + " has " + str(k) + " factors"
+	print(str(j) + " has " + str(k) + " factors")
 	i += 1
+
+print("Ding! Ding! {} has over 500 factors, wow!".format(j))

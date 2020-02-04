@@ -1,5 +1,4 @@
 import PIL, math
-import numpy as np
 
 #Problem 4 - Palindrome Products
 
@@ -29,8 +28,8 @@ def findMaxPalindrome():
 	return large
 
 answer = findMaxPalindrome()
-print answer
-print "The factors are: " + str(findProduct(answer))
+print(answer)
+print("The factors are: " + str(findProduct(answer)))
 #x = input("Type a palindromic number: ")
 
 #if(isPalindrome(x)):

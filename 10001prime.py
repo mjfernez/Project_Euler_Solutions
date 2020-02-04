@@ -1,5 +1,4 @@
 import PIL, math
-import numpy as np
 
 #Problem 7 - 10,001st prime
 
@@ -8,7 +7,7 @@ def listprimes(number):
 	primes = []
 	if (number <=1):
 		return [1]
-	a = np.ones(number)
+	a = [1] * number
 	a[0]=0
 	a[1]=0#1 and 0 are not prime
 	##Sieve of eratosthenes
@@ -26,6 +25,6 @@ def listprimes(number):
 	return primes
 
 out_list = listprimes(1000000)
-print out_list
+#print(out_list)
 #return 10,001th prime factor
-print out_list[10000]
+print(out_list[10000])

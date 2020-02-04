@@ -8,21 +8,20 @@
 #one hundred natural numbers and the square of the sum.
 
 import PIL, math
-import numpy as np
 
 nums = range(1,11)
 numsq = range(1,11)
 
 for i in nums:
-	i = i*i
+    i = i*i
 
-print nums
-print numsq
+print(nums)
+print(numsq)
 
 sum1 = (sum(nums)**2)
 sum2 = (sum(numsq))
 
-print "The sum squared is: " + str(sum1)
-print "The sum of the squares is: " + str(sum2)
+print("The sum squared is: " + str(sum1))
+print("The sum of the squares is: " + str(sum2))
 
-print "The difference is: " + str(abs(sum2-sum1))
+print("The difference is: " + str(abs(sum2-sum1)))
