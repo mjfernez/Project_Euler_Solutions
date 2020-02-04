@@ -21,16 +21,19 @@ const char bigBoy[1001] = "73167176531330624919225119674426574742355349194934"
     "84580156166097919133875499200524063689912560717606"
     "05886116467109405077541002256983155200055935729725"
     "71636269561882670428252483600823257530420752963450";
-
-int parseNum(const char *x, int r){
-    long len = 1001;
-    int max = 0;
-    printf("%s\n", x);
+// parseNum: Splits in segements of r, to find out the largest product of digits
+// for that segment size
+// max is the maximum product found within the number
+// x: the number (as a char string) to be parsed
+// r: the range to parse over
+long long parseNum(const char *x, int r){
+    int len = 1000;
+    long max; 
     for(int i = 0; i < len - r; i++){
         // Digits in ascii start at 48
-        long long int prod = (long long int) (x[i] - 48);
+        long long prod =  (x[i] - 48);
         for(int k = i + 1; k < i + r; k++)
-            prod *= (long long int) (x[k] - 48);
+            prod *= (x[k] - 48);
         if(prod > max)
             max = prod;
     }
@@ -40,7 +43,8 @@ int parseNum(const char *x, int r){
 
 
 int main(){
-    int p = parseNum(bigBoy, 13);
-    printf("%d\n", p);
+    long long p = parseNum(bigBoy, 13);
+    printf("%ld\n", p);
+    //printf("%ld\n", parseNum(bigBoy, 13));
     return 0;
 }
