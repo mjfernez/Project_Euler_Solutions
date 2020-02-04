@@ -28,9 +28,9 @@ int parseNum(const char *x, int r){
     printf("%s\n", x);
     for(int i = 0; i < len - r; i++){
         // Digits in ascii start at 48
-        int prod = (int) (x[i] - 48);
+        long long int prod = (long long int) (x[i] - 48);
         for(int k = i + 1; k < i + r; k++)
-            prod *= (int) (x[k] - 48);
+            prod *= (long long int) (x[k] - 48);
         if(prod > max)
             max = prod;
     }
