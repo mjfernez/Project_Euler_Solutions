@@ -2,23 +2,6 @@ import PIL
 import math
 
 # Problem 10 sum of primes
-###INEFFICIENT###
-# def isPrime(number):
-#	if (number <=1):
-#		return False
-#	for i in range(2,number):
-#		if(number%i==0):
-#			return False
-#	return True
-
-# def prime_factors(number):
-#primes = []
-# for i in range(number, 2, -1):
-# if(number%i==0):
-# if (isPrime(i)):
-# return i
-# return primes
-
 
 def prime_factors(number):
     primes = []

@@ -1,5 +1,3 @@
-import PIL
-import math
 # Problem 16 Power digit sum
 n = 2**1000
 strn = str(n)
