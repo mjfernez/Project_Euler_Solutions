@@ -5,10 +5,6 @@
 # There exists exactly one Pythagorean triplet for which a + b + c = 1000.
 # Find the product abc.
 
-import PIL
-import math
-
-
 def isTriple(abc):
     if len(abc) > 3:
         return False
