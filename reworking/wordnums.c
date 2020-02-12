@@ -14,14 +14,12 @@ const char *tens[10] = {"","", "twenty", "thirty", "forty",
 const char *nd = "AND";
 
 
-///starting to think recursion is wrong way to go about this...
 int lengthOfName(char *num){
     char *word; 
     // minus 1 for null terminator
     int digits = strlen(num) - 1;
     int n = atoi(num);
     if(digits == 1){
-        printf("here");
         word = (char *) ones[n];
         printf("%s\n", word);
         return strlen(word);
@@ -40,16 +38,25 @@ int lengthOfName(char *num){
             return strlen(word);
         }
         else{
+            // since the input to the function expects a null terminator, an extra '\n' is needed
+            
+            /// substring would be a better way to do this
             char o[2];
             int on;
             word = (char *) tens[n / 10];
             printf("%s", word);
             o[0] = num[1];
-            printf("%s\n", o);
+            o[1] = '\n';
             on = lengthOfName(o);
+            //return (strlen(word) + lengthOfName(o));
             return (strlen(word) + on);
         }
     }
+    if(digits == 3){
+        word = (char *) ones[n / 100]
+        int t = lengthOfName(
+    }
+    // error condition
     return -1;
 }
 
