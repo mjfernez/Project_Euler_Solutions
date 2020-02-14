@@ -1,10 +1,7 @@
-import PIL
-import math
-
-ones = ["", "one", "two", "three", "four",
+ones = ["","one", "two", "three", "four",
         "five", "six", "seven", "eight", "nine"]
 weirdos = ["thirteen", "twelve", "eleven", "ten"]
-tens = ["", "teen", "twenty", "thirty", "forty",
+tens = ["","teen", "twenty", "thirty", "forty",
         "fifty", "sixty", "seventy", "eighty", "ninety"]
 nd = "AND"
 

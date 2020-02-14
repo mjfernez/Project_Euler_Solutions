@@ -11,7 +11,7 @@ const char *teens[10] = {"ten", "eleven", "twelve", "thirteen", "fourteen", "fif
     "sixteen", "seventeen", "eighteen", "nineteen"};
 const char *tens[10] = {"","", "twenty", "thirty", "forty",
     "fifty", "sixty", "seventy", "eighty", "ninety"};
-const char *nd = "AND";
+const char nd[4] = "AND";
 
 
 int lengthOfName(char *num) {
@@ -19,7 +19,6 @@ int lengthOfName(char *num) {
     // minus 1 for null terminator
     int digits = strlen(num) - 1;
     int n = atoi(num);
-    printf("The num is now %s", num, digits);
     if(digits == 1) {
         word = (char *) ones[n];
         printf("%s\n", word);
@@ -37,19 +36,17 @@ int lengthOfName(char *num) {
             printf("%s\n", word);
             return strlen(word);
         } else {
-            // since the input to the function expects a null terminator, 
+            // since the input to the function expects a string, 
             // an extra '\n' is needed
             char o[2];
             int on;
             word = (char *) tens[n / 10];
             printf("%s", word);
-            strncpy(o, &num[1], 2);
-            printf("%s", o);
+            memcpy(o, &num[1], 2);
             on = lengthOfName(o);
             return (strlen(word) + on);
         }
     } else if(digits == 3) {
-        printf("HERE\n\n");
         word = (char *) ones[n / 100];
         printf("%shundred", word);
         if(num[1] == '0' && num[2] == '0') {
@@ -62,12 +59,24 @@ int lengthOfName(char *num) {
             printf("%s", nd);
             te = lengthOfName(t);
             // example: the user inputs, num = 121
-            //      one            hundred            AND         twenty one
-            
-            ////this line breaks the program for some reason
-            //return (strlen(word) + strlen("hundred") + strlen(nd) + te);
+            //      one            hundred              AND     twenty one
+            return (strlen(word) + strlen("hundred") + strlen(nd) + te);
         }
+    }  else if(digits == 4) {
+        word = (char *) ones[n / 1000];
+        printf("%sthousand", word);
+        if(num[1] == '0' && num[2] == '0' && num[3] == '0') {
+            printf("\n");
+            return strlen(word) + strlen("thousand");
+        } /*else {
+            char h[4];
+            int hu;
+            strncpy(h, &num[1], 3);
+            hu = lengthOfName(h);
+            return (strlen(word) + strlen("thousand") + hu);
+        }*/
     }
+
     // error condition for debugging, i.e. in case I messed up, return something
     return -1;
 }
@@ -75,12 +84,20 @@ int lengthOfName(char *num) {
 int main() {
     // 4 is the max for this example, +1 for null terminator or if user tries to cheat
     char n[5];
-    int out;
+    int out = 0;
     printf("Number from 1 to 1000: ");
     fgets(n, 10, stdin);
     if(atoi(n) > 1000)
         return printf("only up to 1000 in this example, sorry :(\n");
-    out = lengthOfName(n);
-    printf("%d Characters... wow you'll hurt your hands typing that!\n", out);
+    // Test code to make sure the function works
+    //out = lengthOfName(n);
+    //printf("%d Characters... wow you'll hurt your hands typing that!\n", out);
+    
+    for(int i = 1; i <= atoi(n); i++){
+        char curr[5];        
+        sprintf(curr, "%d\n", i);
+        out += lengthOfName(curr);
+    }
+    printf("Sum of charachters: %d\n", out);
     return 0;
 }
