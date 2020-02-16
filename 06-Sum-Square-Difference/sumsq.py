@@ -10,14 +10,11 @@
 import PIL
 import math
 
-nums = range(1, 11)
-numsq = range(1, 11)
+nums = range(1, 101)
+numsq = []
 
 for i in nums:
-    i = i*i
-
-print(nums)
-print(numsq)
+    numsq.append(i*i)
 
 sum1 = (sum(nums)**2)
 sum2 = (sum(numsq))
